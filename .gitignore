@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+s3_image_frappe/docs/current
+node_modules/
