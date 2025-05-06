@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "creation": "2025-05-05 23:44:42.577308",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "aws_credentials_section",
+  "aws_key",
+  "bucket_name",
+  "folder_name",
+  "column_break_gfua",
+  "aws_secret",
+  "region_name",
+  "s3_bucket_base_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "aws_credentials_section",
+   "fieldtype": "Section Break",
+   "label": "AWS credentials"
+  },
+  {
+   "fieldname": "aws_key",
+   "fieldtype": "Data",
+   "label": "AWS Key"
+  },
+  {
+   "fieldname": "bucket_name",
+   "fieldtype": "Data",
+   "label": "Bucket Name"
+  },
+  {
+   "fieldname": "folder_name",
+   "fieldtype": "Data",
+   "label": "Folder Name"
+  },
+  {
+   "fieldname": "column_break_gfua",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "aws_secret",
+   "fieldtype": "Data",
+   "label": "AWS Secret"
+  },
+  {
+   "fieldname": "region_name",
+   "fieldtype": "Data",
+   "label": "S3 Bucket Region Name"
+  },
+  {
+   "fieldname": "s3_bucket_base_url",
+   "fieldtype": "Data",
+   "label": "S3 Bucket Base URL"
+  }
+ ],
+ "grid_page_length": 50,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-05-06 10:44:51.579859",
+ "modified_by": "Administrator",
+ "module": "S3 Image Frappe",
+ "name": "S3 Image Upload",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
