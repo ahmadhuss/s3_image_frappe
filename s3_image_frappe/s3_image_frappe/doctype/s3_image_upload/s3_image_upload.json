@@ -5,13 +5,13 @@
  "engine": "InnoDB",
  "field_order": [
   "aws_credentials_section",
+  "active",
   "aws_key",
-  "bucket_name",
-  "folder_name",
-  "column_break_gfua",
   "aws_secret",
+  "bucket_name",
   "region_name",
-  "s3_bucket_base_url"
+  "s3_bucket_base_url",
+  "folder_name"
  ],
  "fields": [
   {
@@ -22,12 +22,16 @@
   {
    "fieldname": "aws_key",
    "fieldtype": "Data",
-   "label": "AWS Key"
+   "in_list_view": 1,
+   "label": "AWS Key",
+   "reqd": 1
   },
   {
    "fieldname": "bucket_name",
    "fieldtype": "Data",
-   "label": "Bucket Name"
+   "in_list_view": 1,
+   "label": "Bucket Name",
+   "reqd": 1
   },
   {
    "fieldname": "folder_name",
@@ -35,29 +39,35 @@
    "label": "Folder Name"
   },
   {
-   "fieldname": "column_break_gfua",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "aws_secret",
    "fieldtype": "Data",
-   "label": "AWS Secret"
+   "in_list_view": 1,
+   "label": "AWS Secret",
+   "reqd": 1
   },
   {
    "fieldname": "region_name",
    "fieldtype": "Data",
-   "label": "S3 Bucket Region Name"
+   "in_list_view": 1,
+   "label": "S3 Bucket Region Name",
+   "reqd": 1
   },
   {
    "fieldname": "s3_bucket_base_url",
    "fieldtype": "Data",
-   "label": "S3 Bucket Base URL"
+   "label": "S3 Bucket Base URL",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
   }
  ],
- "grid_page_length": 50,
  "issingle": 1,
  "links": [],
- "modified": "2025-05-06 10:44:51.579859",
+ "modified": "2025-05-06 08:46:56.134990",
  "modified_by": "Administrator",
  "module": "S3 Image Frappe",
  "name": "S3 Image Upload",
@@ -74,7 +84,6 @@
    "write": 1
   }
  ],
- "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

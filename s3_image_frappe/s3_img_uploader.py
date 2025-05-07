@@ -16,6 +16,17 @@ from botocore.client import Config
 @frappe.whitelist()
 def img_upload_to_s3(doc, method):
     try:
+        setting = frappe.get_single("S3 Image Upload")
+        if (
+                not setting.active and
+                setting.aws_key and
+                setting.aws_secret and
+                setting.bucket_name and
+                setting.region_name and
+                setting.s3_bucket_base_url
+        ):
+            return
+
         if doc.attached_to_doctype and doc.attached_to_field and doc.attached_to_name:
             doctype_name = doc.attached_to_doctype
             field_name = doc.attached_to_field
@@ -45,9 +56,6 @@ def img_upload_to_s3(doc, method):
         if not image_mime_pattern.match(content_type):
             return  # exit from the function
 
-        # S3 Upload
-        # Boto3 Settngs:
-        setting = frappe.get_single("S3 Image Upload")
         # Boto3 Object:
         s3_client = boto3.client(
             "s3",
